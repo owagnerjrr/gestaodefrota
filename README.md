@@ -24,3 +24,4 @@ Variáveis de ambiente necessárias na Vercel (Production):
 - `FLEET_PUBLIC_REQUESTS_ENABLED`: manter ausente ou `false` até ativar proteção contra abuso (App Check/CAPTCHA e limitação de taxa), depois usar `true`.
 
 Após salvar variáveis, fazer novo deploy. A API não envia e-mails ainda. Solicitações públicas não devem ser habilitadas antes das proteções anti-spam. Datas são interpretadas no fuso de Brasília (UTC-03); revisar o comportamento caso haja mudança de fuso. Testar aprovação e conflito antes de produção.
+Atualização de implantação — outubro de 2026
