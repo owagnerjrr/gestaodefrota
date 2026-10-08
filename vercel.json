@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/gestor",
+      "destination": "/api/gestor"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
