@@ -14,7 +14,7 @@ export default async function handler(req,res){
     }
     if(req.method!=='POST')return send(res,405,{error:'Método não permitido.'});
     const {id,action}=req.body||{};
-    if(typeof id!=='string'||!/^[\\w-]{8,128}$/.test(id))return send(res,400,{error:'Identificador inválido.'});
+    if(typeof id!=='string'||!/^[\w-]{8,128}$/.test(id))return send(res,400,{error:'Identificador inválido.'});
     if(action==='delete'||action==='edit'){
       const ref=db.collection('fleetRequests').doc(id);
       const availability=db.collection('publicAvailability').doc(id);
