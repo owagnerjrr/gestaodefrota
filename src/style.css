@@ -4,5 +4,5 @@
 .requestrow{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px 8px;border-top:1px solid #e3eaf4}.requestrow div div{margin-top:6px}.requestrow small{display:block;margin-top:6px;color:#52647e}.requestactions{display:flex;gap:8px;flex-shrink:0}@media(max-width:650px){.requestrow{flex-direction:column;align-items:stretch}.requestactions{justify-content:flex-end}}
 
 /* Calendário mais estreito, centralizado em ambas as telas */
-.calendar{max-width:1120px;margin-left:auto;margin-right:auto}
+.calendar{max-width:900px;margin-left:auto;margin-right:auto}
 @media(max-width:850px){.calendar{max-width:100%}}
