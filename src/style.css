@@ -17,3 +17,6 @@
 
 /* Grade diária compacta: 24 horários visíveis sem rolagem interna */
 .daydialog{width:min(1000px,100%)}.schedulecompact{border:1px solid #e0e8f4;border-radius:12px;padding:12px}.schedulecompacttitle{text-align:center;font-weight:700;margin-bottom:12px}.timegrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.timecell{background:#dff7e9;border-radius:9px;min-height:70px;padding:9px 5px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center;min-width:0}.timecell strong{font-size:17px}.timecell span{font-size:12px}.timecell small{font-size:10px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.timecell.approved{background:#ffdade}.timecell.pending{background:#fff0bb}.timecell.maintenance{background:#e0e4ea}@media(max-width:650px){.timegrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.timecell{min-height:62px;padding:6px 3px}.timecell strong{font-size:14px}.timecell span{font-size:11px}.schedulecompact{padding:8px}}
+
+/* Ação destrutiva do painel gestor */
+.requestactions .deletebutton{background:#dc2626;color:#fff;border:1px solid #b91c1c;font-weight:700}.requestactions .deletebutton:hover{background:#b91c1c;filter:none}.requestactions .deletebutton:disabled{opacity:.55}
