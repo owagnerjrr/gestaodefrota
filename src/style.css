@@ -10,3 +10,7 @@
 /* Dias anteriores à data de Brasília: encerrados e indisponíveis */
 .calday.past,.calday.past:disabled{background:#edf0f4;color:#7b8798;opacity:1;cursor:not-allowed}
 .calday.past .dayhint{color:#7b8798}
+
+/* Prioridade visual para dias passados, mesmo desabilitados */
+.calgrid .calday.past,.calgrid .calday.past:disabled{background-color:#e2e5ea!important;color:#667085!important;opacity:1!important;cursor:not-allowed!important}
+.calgrid .calday.past .dayhint{color:#667085!important}
