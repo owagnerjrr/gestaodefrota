@@ -2,3 +2,7 @@
 .vehicleclick{cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s}.vehicleclick:hover{border-color:#1b65d8;box-shadow:0 5px 18px rgba(20,70,130,.12)}.vehicleclick:focus-visible{outline:3px solid #0759da;outline-offset:3px}.vehicle-selected{border:2px solid #0759da;box-shadow:0 0 0 2px rgba(7,89,218,.09)}.carfilter{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 0 15px;margin-bottom:15px;border-bottom:1px solid #e4eaf4;color:#173c70}.carfilter button{font-size:14px}@media(max-width:650px){.carfilter{flex-wrap:wrap}}
 
 .requestrow{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px 8px;border-top:1px solid #e3eaf4}.requestrow div div{margin-top:6px}.requestrow small{display:block;margin-top:6px;color:#52647e}.requestactions{display:flex;gap:8px;flex-shrink:0}@media(max-width:650px){.requestrow{flex-direction:column;align-items:stretch}.requestactions{justify-content:flex-end}}
+
+/* Calendário mais estreito, centralizado em ambas as telas */
+.calendar{max-width:1120px;margin-left:auto;margin-right:auto}
+@media(max-width:850px){.calendar{max-width:100%}}
