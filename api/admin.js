@@ -1,9 +1,13 @@
-import {getFirebaseAdmin,requireAdmin,send,overlaps} from './_firebase.js';
+import {timingSafeEqual} from 'node:crypto';
+import {getFirebaseAdmin,send,overlaps} from './_firebase.js';
 export default async function handler(req,res){
   res.setHeader('Cache-Control','no-store');
   try{
-    const {auth,db,fieldValue}=getFirebaseAdmin();
-    const user=await requireAdmin(req,auth);
+    const expected=process.env.FLEET_ADMIN_LINK_TOKEN||'';
+    const supplied=String(req.headers['x-fleet-admin-token']||'');
+    if(!expected||!supplied||Buffer.byteLength(expected)!==Buffer.byteLength(supplied)||!timingSafeEqual(Buffer.from(expected),Buffer.from(supplied)))return send(res,403,{error:'Link administrativo inválido ou não configurado.'});
+    const {db,fieldValue}=getFirebaseAdmin();
+    const user={uid:'shared-admin-link'};
     if(req.method==='GET'){
       const snap=await db.collection('fleetRequests').orderBy('createdAt','desc').limit(150).get();
       return send(res,200,{requests:snap.docs.map(d=>({id:d.id,...d.data(),createdAt:null}))});
