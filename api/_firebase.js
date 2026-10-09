@@ -13,12 +13,14 @@ export const send=(res,status,body)=>res.status(status).json(body);
 export const validate=(input)=>{
   if(!input||!['yaris','polo'].includes(input.vehicle))throw Error('Veículo inválido.');
   const name=String(input.name||'').trim(),purpose=String(input.purpose||'').trim();
+  const occupants=input.occupants===undefined?null:Number(input.occupants);
+  if(occupants!==null&&(!Number.isInteger(occupants)||occupants<1||occupants>5))throw Error('Informe de 1 a 5 ocupantes.');
   if(name.length<3||name.length>120||purpose.length<5||purpose.length>500)throw Error('Preencha responsável e finalidade corretamente.');
   const startAt=String(input.startAt||''),endAt=String(input.endAt||'');
   if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:00$/.test(startAt)||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:00$/.test(endAt))throw Error('Formato de data inválido.');
   const start=new Date(startAt+'-03:00'),end=new Date(endAt+'-03:00');
   if(!Number.isFinite(start.getTime())||!Number.isFinite(end.getTime())||end<=start||end-start>31*86400000||start<Date.now())throw Error('Período inválido (máximo de 31 dias).');
-  return {vehicle:input.vehicle,name,purpose,startAt,endAt,status:'pending'};
+  return {vehicle:input.vehicle,name,purpose,occupants,startAt,endAt,status:'pending'};
 };
 export async function requireAdmin(req,auth){
   const token=String(req.headers.authorization||'').replace(/^Bearer\s+/i,'');
