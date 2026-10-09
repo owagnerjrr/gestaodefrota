@@ -11,6 +11,6 @@ export default async function handler(req,res){
     const booking=await db.collection('fleetRequests').doc(id).get();
     if(!booking.exists||booking.data().status!=='approved')return send(res,404,{error:'Reserva indisponível.'});
     const b=booking.data();
-    return send(res,200,{name:b.name||'',purpose:b.purpose||'',vehicle:b.vehicle,startAt:b.startAt,endAt:b.endAt});
+    return send(res,200,{name:b.name||'',purpose:b.purpose||'',occupants:b.occupants||null,vehicle:b.vehicle,startAt:b.startAt,endAt:b.endAt});
   }catch(err){return send(res,500,{error:'Não foi possível consultar os detalhes da reserva.'});}
 }
