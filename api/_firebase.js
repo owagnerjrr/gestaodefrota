@@ -11,7 +11,7 @@ export function getFirebaseAdmin(){
 export const allowedAdmins=()=>String(process.env.FLEET_ADMIN_UIDS||'').split(',').map(s=>s.trim()).filter(Boolean);
 export const send=(res,status,body)=>res.status(status).json(body);
 export const validate=(input)=>{
-  if(!input||!['yaris','polo'].includes(input.vehicle))throw Error('Veículo inválido.');
+  if(!input||!['onix-uwd7b04','onix-uwd7a75'].includes(input.vehicle))throw Error('Veículo inválido.');
   const name=String(input.name||'').trim(),purpose=String(input.purpose||'').trim();
   const occupants=input.occupants===undefined?null:Number(input.occupants);
   if(occupants!==null&&(!Number.isInteger(occupants)||occupants<1||occupants>5))throw Error('Informe de 1 a 5 ocupantes.');
