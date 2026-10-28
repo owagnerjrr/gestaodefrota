@@ -1,3 +1,4 @@
+const normalizeVehicle=id=>({yaris:'onix-uwd7b04',polo:'onix-uwd7a75'})[id]||id;
 import {timingSafeEqual} from 'node:crypto';
 import {getFirebaseAdmin,send,overlaps,validate} from './_firebase.js';
 export default async function handler(req,res){
@@ -31,7 +32,7 @@ export default async function handler(req,res){
         for(const lock of locks)lockSnaps.push(await tx.get(lock));
         if(updated){
           const snapshot=await tx.get(db.collection('publicAvailability'));
-          if(snapshot.docs.some(d=>d.id!==id&&d.data().vehicle===updated.vehicle&&['pending','approved','maintenance'].includes(d.data().status)&&overlaps(d.data(),updated)))throw Error(conflict);
+          if(snapshot.docs.some(d=>d.id!==id&&normalizeVehicle(d.data().vehicle)===normalizeVehicle(updated.vehicle)&&['pending','approved','maintenance'].includes(d.data().status)&&overlaps(d.data(),updated)))throw Error(conflict);
         }
         locks.forEach((lock,i)=>tx.set(lock,{version:(lockSnaps[i].exists?(lockSnaps[i].data().version||0):0)+1,updatedAt:fieldValue.serverTimestamp()}));
         if(action==='delete'){
