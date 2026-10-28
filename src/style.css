@@ -71,3 +71,6 @@
 
 /* Onix UWD7A75: margem extra à direita para a traseira ficar inteira */
 @media(min-width:851px){.vehicles .vehicle:nth-child(2) .carart{right:20px;width:51%}.vehicles .vehicle:nth-child(2) .carart img{width:88%;max-width:88%;height:85%;max-height:85%;transform:translateX(-20px);object-fit:contain}}
+
+/* Refinamento final: reservar espaço para a traseira completa, sem distorcer */
+@media(min-width:851px){.vehicles .vehicle .carart,.vehicles .vehicle:nth-child(2) .carart{right:0;width:56%;max-width:none;overflow:hidden;display:flex;justify-content:center;align-items:center}.vehicles .vehicle .carart img,.vehicles .vehicle:nth-child(2) .carart img{width:94%;max-width:94%;height:82%;max-height:82%;object-fit:contain;object-position:center;transform:translateX(-14px)}.vehicles .vehicle>div:first-child{max-width:44%;flex-basis:44%;width:44%}}
