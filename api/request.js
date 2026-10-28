@@ -1,3 +1,4 @@
+const normalizeVehicle=id=>({yaris:'onix-uwd7b04',polo:'onix-uwd7a75'})[id]||id;
 import {getFirebaseAdmin,send,validate,overlaps} from './_firebase.js';
 const CONFLICT='Horário já agendado, por favor escolher outro horário.';
 export default async function handler(req,res){
@@ -15,7 +16,7 @@ export default async function handler(req,res){
       const existing=await tx.get(db.collection('publicAvailability'));
       if(existing.docs.some(d=>{
         const b=d.data();
-        return b.vehicle===input.vehicle&&['pending','approved','maintenance'].includes(b.status)&&overlaps(b,input);
+        return normalizeVehicle(b.vehicle)===normalizeVehicle(input.vehicle)&&['pending','approved','maintenance'].includes(b.status)&&overlaps(b,input);
       }))throw Error(CONFLICT);
       tx.set(lock,{version:(lockSnap.exists?(lockSnap.data().version||0):0)+1,updatedAt:fieldValue.serverTimestamp()});
       tx.set(doc,{...input,createdAt:fieldValue.serverTimestamp()});
