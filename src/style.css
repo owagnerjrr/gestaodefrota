@@ -32,3 +32,7 @@
 
 /* Ampliar as artes dos Onix nos cartões sem cortar o conteúdo */
 .vehicle .carart{width:54%;min-width:0;min-height:205px;flex-shrink:0}.vehicle .carart img{max-width:none;width:100%;height:auto;max-height:230px;object-fit:contain}@media(max-width:750px){.vehicle .carart{width:100%;min-height:0}.vehicle .carart img{max-height:none}}
+
+/* Cartões com arte grande: o layout anterior limitava a imagem a metade do cartão. */
+@media(min-width:851px){.vehicles .vehicle{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:455px;gap:12px}.vehicles .vehicle .carart{width:100%;min-width:0;height:270px;min-height:270px;flex:1;align-self:stretch}.vehicles .vehicle .carart img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain}.vehicles .vehicle h2{margin-bottom:9px}.vehicles .vehicle .car-year{margin-bottom:0}.vehicles .vehicle .car-plate{margin-top:5px}.vehicles .vehicle .available{z-index:2}}
+@media(min-width:501px) and (max-width:850px){.vehicles .vehicle .carart{width:60%;min-width:0}.vehicles .vehicle .carart img{max-width:none;max-height:none;width:100%;height:auto}}
