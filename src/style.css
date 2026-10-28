@@ -26,3 +26,6 @@
 
 /* Consulta pública de detalhes de reservas aprovadas */
 .timecell-clickable{cursor:pointer;outline-offset:2px}.timecell-clickable:hover,.timecell-clickable:focus-visible{outline:2px solid #2563eb;filter:brightness(.97)}.booking-details{margin-top:12px;border:1px solid #cbd5e1;border-radius:12px;padding:12px 16px;background:#f8fafc}.booking-details-header{display:flex;align-items:center;justify-content:space-between;gap:12px}.booking-details-header h3{margin:0;font-size:17px}.booking-details p{margin:7px 0;font-size:14px}
+
+/* Identificação visual dos dois Onix da frota */
+.vehicle .car-year{display:inline-block;background:#e7f2ff;color:#155eaa;border-radius:9px;padding:5px 10px;font-weight:700;font-size:14px;margin:0 0 12px}.vehicle .car-plate{display:flex;gap:10px;align-items:center;margin-top:14px;font-weight:600}.vehicle .car-plate strong{display:inline-block;background:#f0f6ff;border:1px solid #bfd5ef;color:#103c73;padding:8px 14px;border-radius:9px;letter-spacing:1px;font-size:18px}.vehicle .carart img{object-fit:contain;width:100%;height:100%;border-radius:14px}
