@@ -29,3 +29,6 @@
 
 /* Identificação visual dos dois Onix da frota */
 .vehicle .car-year{display:inline-block;background:#e7f2ff;color:#155eaa;border-radius:9px;padding:5px 10px;font-weight:700;font-size:14px;margin:0 0 12px}.vehicle .car-plate{display:flex;gap:10px;align-items:center;margin-top:14px;font-weight:600}.vehicle .car-plate strong{display:inline-block;background:#f0f6ff;border:1px solid #bfd5ef;color:#103c73;padding:8px 14px;border-radius:9px;letter-spacing:1px;font-size:18px}.vehicle .carart img{object-fit:contain;width:100%;height:100%;border-radius:14px}
+
+/* Ampliar as artes dos Onix nos cartões sem cortar o conteúdo */
+.vehicle .carart{width:54%;min-width:0;min-height:205px;flex-shrink:0}.vehicle .carart img{max-width:none;width:100%;height:auto;max-height:230px;object-fit:contain}@media(max-width:750px){.vehicle .carart{width:100%;min-height:0}.vehicle .carart img{max-height:none}}
